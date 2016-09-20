@@ -18,3 +18,22 @@ for a in fibL:
             if a <= 4000000:
                   fibLeV.append(a)
 print(fibL, sum(fibLeV))
+# Problem 3: Largest Prime Factor
+def lPf(n):
+    i = 2
+    while i * i <= n:
+        if n % i:
+            i += 1
+        else:
+            n //= i
+    return n
+b=int(input("Largest Prime Factor of: "))
+print(lPf(b))
+# Problem 4: Largest Palindromic Number:
+paList=[]
+for a in range(10,1000):
+    for b in range(10,1000):
+        if str(a*b)==str(a*b)[::-1]:
+            paList.append(int(a*b))
+print(max(paList))
+
