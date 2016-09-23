@@ -29,11 +29,24 @@ def lPf(n):
     return n
 b=int(input("Largest Prime Factor of: "))
 print(lPf(b))
-# Problem 4: Largest Palindromic Number:
+# Problem 4: Largest Palindromic Number
 paList=[]
 for a in range(10,1000):
     for b in range(10,1000):
         if str(a*b)==str(a*b)[::-1]:
             paList.append(int(a*b))
 print(max(paList))
-
+# Problem 5: Smallest Multiple of 1 to 20
+print("Answer is: ",(16*9*5*7*11*13*17*19)) # Think of py way of explaining 16 and 9
+# Problem 6: Find the difference between the sum of the squares of the 
+#first one hundred natural numbers and the square of the sum.
+bL=[]
+d=(sum(range(1,101)))**2
+for i in range(1,101):
+    if i < 101:
+        bL.append(i**2)
+print(d-(sum(bL)))
+# Problem 7: 10001st Prime
+allP=[x for x in range(2,105000)
+      if all(x % y != 0 for y in range(2,x) )]
+print("The 10001st Prime is: ",allP[10000]) # Not ideal. Took 2min 40sec
